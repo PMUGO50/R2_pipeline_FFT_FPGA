@@ -1,27 +1,9 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: N/A
-// Engineer:
-// 
-// Create Date:    13:21:59 03/30/2024 
-// Design Name: 
-// Module Name:    wnrom 
-// Project Name: R2_FFT
-// Target Devices: UNKNOWN
-// Tool versions: ISE14.7
-// Description: 
-//
-// Dependencies: 
-//
-// Revision: 
-// Revision 0.01 - File Created
-// Additional Comments: 
-//
-//////////////////////////////////////////////////////////////////////////////////
+
 module wnrom
 #(
 	parameter width=16,
-	parameter addrw=6
+	parameter addrw=9
 )
 (
 	input clk,

@@ -1,9 +1,9 @@
 function wave_generator()
-    fs = 32;
+    fs = 128;
     f0 = 1;
-    t = (1/fs):(1/fs):(64/fs);
+    t = (1/fs):(1/fs):(512/fs);
     
-    x = 1000*sin(f0*(2*pi)*t) + 1000*sin(2*f0*(2*pi)*t) + 1000*sin(7*f0*(2*pi)*t);
+    x = 50*(sin(f0*(2*pi)*t) + sin(7*f0*(2*pi)*t) + sin(26*f0*(2*pi)*t));
     x = round(x).';
     sampgen(x)
     

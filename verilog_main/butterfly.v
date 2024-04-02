@@ -1,23 +1,5 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: N/A
-// Engineer:
-// 
-// Create Date:    10:51:13 03/30/2024 
-// Design Name: 
-// Module Name:    butterfly 
-// Project Name: R2_FFT
-// Target Devices: UNKNOWN
-// Tool versions: ISE14.7
-// Description: 
-//
-// Dependencies: 
-//
-// Revision: 
-// Revision 0.01 - File Created
-// Additional Comments: 
-//
-//////////////////////////////////////////////////////////////////////////////////
+
 module butterfly
 #(
 	parameter width=16

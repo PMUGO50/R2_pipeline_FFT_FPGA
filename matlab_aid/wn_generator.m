@@ -1,7 +1,7 @@
 function wn_generator()
     re = [];
     im = [];
-    N = 64;
+    N = 512;
     for k=0:(N-1)
         re = [re, real(exp(-2*pi*k/N*1j)) * (2^15)];
         im = [im, imag(exp(-2*pi*k/N*1j)) * (2^15)];

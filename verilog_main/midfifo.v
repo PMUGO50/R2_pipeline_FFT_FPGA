@@ -1,27 +1,9 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: N/A
-// Engineer:
-// 
-// Create Date:    10:57:35 03/30/2024 
-// Design Name: 
-// Module Name:    midfifo 
-// Project Name: R2_FFT
-// Target Devices: UNKNONW
-// Tool versions: ISE14.7
-// Description: 
-//
-// Dependencies: 
-//
-// Revision: 
-// Revision 0.01 - File Created
-// Additional Comments: 
-//
-//////////////////////////////////////////////////////////////////////////////////
+
 module midfifo
 #(
 	parameter width=16,
-	parameter depth=32
+	parameter depth=512
 )
 (
 	input clk,

@@ -24,7 +24,7 @@
 
 - Width: 16
 
-- Depth: 64
+- Depth: 512
 
 - Full/Empty flag: False
 
@@ -40,7 +40,7 @@
 
 - Width: 16
 
-- Depth: 64
+- Depth: 512
 
 - Enable: Always
 
@@ -54,7 +54,7 @@
 
 - Width: 16
 
-- Depth: 64
+- Depth: 512
 
 - Load init file: romdata_re.coe, romdata_im.coe
 

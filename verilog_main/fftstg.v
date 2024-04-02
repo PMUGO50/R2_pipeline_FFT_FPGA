@@ -1,28 +1,10 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: N/A
-// Engineer:
-// 
-// Create Date:    11:09:11 03/30/2024 
-// Design Name: 
-// Module Name:    fftstg 
-// Project Name: R2_FFT
-// Target Devices: UNKNOWN
-// Tool versions: ISE14.7
-// Description: 
-//
-// Dependencies: 
-//
-// Revision: 
-// Revision 0.01 - File Created
-// Additional Comments: 
-//
-//////////////////////////////////////////////////////////////////////////////////
+
 module fftstg
 #(
 	parameter width=16,
-	parameter N=6,
-	parameter M=6
+	parameter N=9,
+	parameter M=9
 )
 (
 	input clk,
