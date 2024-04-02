@@ -1,0 +1,867 @@
+Release 14.7 - xst P.20131013 (nt)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.05 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.05 secs
+ 
+--> Reading design: corefft.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "corefft.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "corefft"
+Output Format                      : NGC
+Target Device                      : xc6slx9-2-ftg256
+
+---- Source Options
+Top Module Name                    : corefft
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+---- Other Options
+Cores Search Directories           : {"ipcore_dir"  }
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "D:\ZJU\VERILOG\B2FFT\ipcore_dir\rom_re.v" into library work
+Parsing module <rom_re>.
+Analyzing Verilog file "D:\ZJU\VERILOG\B2FFT\ipcore_dir\rom_im.v" into library work
+Parsing module <rom_im>.
+Analyzing Verilog file "D:\ZJU\VERILOG\B2FFT\ipcore_dir\fifo.v" into library work
+Parsing module <fifo>.
+Analyzing Verilog file "D:\ZJU\VERILOG\B2FFT\ipcore_dir\compmul.v" into library work
+Parsing module <compmul>.
+Analyzing Verilog file "D:\ZJU\VERILOG\B2FFT\wnrom.v" into library work
+Parsing module <wnrom>.
+Analyzing Verilog file "D:\ZJU\VERILOG\B2FFT\midfifo.v" into library work
+Parsing module <midfifo>.
+Analyzing Verilog file "D:\ZJU\VERILOG\B2FFT\ipcore_dir\outram.v" into library work
+Parsing module <outram>.
+Analyzing Verilog file "D:\ZJU\VERILOG\B2FFT\complexmul.v" into library work
+Parsing module <complexmul>.
+Analyzing Verilog file "D:\ZJU\VERILOG\B2FFT\butterfly.v" into library work
+Parsing module <butterfly>.
+Analyzing Verilog file "D:\ZJU\VERILOG\B2FFT\reage.v" into library work
+Parsing module <reage>.
+Analyzing Verilog file "D:\ZJU\VERILOG\B2FFT\fftstg_fn.v" into library work
+Parsing module <fftstg_fn>.
+Analyzing Verilog file "D:\ZJU\VERILOG\B2FFT\fftstg.v" into library work
+Parsing module <fftstg>.
+Analyzing Verilog file "D:\ZJU\VERILOG\B2FFT\corefft.v" into library work
+Parsing module <corefft>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <corefft>.
+
+Elaborating module <fftstg(width=16,N=6,M=6)>.
+
+Elaborating module <midfifo>.
+
+Elaborating module <fifo>.
+WARNING:HDLCompiler:1499 - "D:\ZJU\VERILOG\B2FFT\ipcore_dir\fifo.v" Line 39: Empty module <fifo> remains a black box.
+
+Elaborating module <butterfly>.
+
+Elaborating module <wnrom>.
+
+Elaborating module <rom_re>.
+WARNING:HDLCompiler:1499 - "D:\ZJU\VERILOG\B2FFT\ipcore_dir\rom_re.v" Line 39: Empty module <rom_re> remains a black box.
+
+Elaborating module <rom_im>.
+WARNING:HDLCompiler:1499 - "D:\ZJU\VERILOG\B2FFT\ipcore_dir\rom_im.v" Line 39: Empty module <rom_im> remains a black box.
+
+Elaborating module <complexmul>.
+
+Elaborating module <compmul>.
+
+Elaborating module <fftstg(width=16,N=6,M=5)>.
+
+Elaborating module <fftstg(width=16,N=6,M=4)>.
+
+Elaborating module <fftstg(width=16,N=6,M=3)>.
+
+Elaborating module <fftstg(width=16,N=6,M=2)>.
+
+Elaborating module <fftstg_fn(width=16,N=6,M=1)>.
+
+Elaborating module <reage>.
+
+Elaborating module <outram>.
+WARNING:HDLCompiler:1499 - "D:\ZJU\VERILOG\B2FFT\ipcore_dir\outram.v" Line 39: Empty module <outram> remains a black box.
+WARNING:HDLCompiler:413 - "D:\ZJU\VERILOG\B2FFT\reage.v" Line 83: Result of 7-bit expression is truncated to fit in 6-bit target.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <corefft>.
+    Related source file is "D:\ZJU\VERILOG\B2FFT\corefft.v".
+        width = 16
+        NALL = 6
+    Found 1-bit register for signal <mod0_in_en>.
+    Found 16-bit register for signal <mod0_in_im>.
+    Found 16-bit register for signal <mod0_in_re>.
+    Found 6-bit register for signal <mod0_in_cnt>.
+    Found 6-bit adder for signal <mod0_in_cnt[5]_GND_1_o_add_0_OUT> created at line 69.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  39 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <corefft> synthesized.
+
+Synthesizing Unit <fftstg_1>.
+    Related source file is "D:\ZJU\VERILOG\B2FFT\fftstg.v".
+        width = 16
+        N = 6
+        M = 6
+INFO:Xst:3210 - "D:\ZJU\VERILOG\B2FFT\fftstg.v" line 77: Output port <full_re> of the instance <FFU> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "D:\ZJU\VERILOG\B2FFT\fftstg.v" line 77: Output port <full_im> of the instance <FFU> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "D:\ZJU\VERILOG\B2FFT\fftstg.v" line 77: Output port <empty_re> of the instance <FFU> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "D:\ZJU\VERILOG\B2FFT\fftstg.v" line 77: Output port <empty_im> of the instance <FFU> is unconnected or connected to loadless signal.
+    Found 1-bit register for signal <bf_outing>.
+    Found 1-bit register for signal <en_out>.
+    Found 6-bit register for signal <cnt_out>.
+    Found 6-bit register for signal <cnt_bf>.
+    Found 16-bit register for signal <yout_re>.
+    Found 16-bit register for signal <yout_im>.
+    Found 6-bit adder for signal <cnt_bf[5]_GND_2_o_add_9_OUT> created at line 130.
+    Found 5-bit adder for signal <cnt_to_addr> created at line 146.
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred  46 D-type flip-flop(s).
+	inferred  11 Multiplexer(s).
+Unit <fftstg_1> synthesized.
+
+Synthesizing Unit <midfifo>.
+    Related source file is "D:\ZJU\VERILOG\B2FFT\midfifo.v".
+        width = 16
+        depth = 32
+    Summary:
+	no macro.
+Unit <midfifo> synthesized.
+
+Synthesizing Unit <butterfly>.
+    Related source file is "D:\ZJU\VERILOG\B2FFT\butterfly.v".
+        width = 16
+    Found 16-bit subtractor for signal <out1_re> created at line 37.
+    Found 16-bit subtractor for signal <out1_im> created at line 38.
+    Found 16-bit adder for signal <out0_re> created at line 35.
+    Found 16-bit adder for signal <out0_im> created at line 36.
+    Summary:
+	inferred   4 Adder/Subtractor(s).
+Unit <butterfly> synthesized.
+
+Synthesizing Unit <wnrom>.
+    Related source file is "D:\ZJU\VERILOG\B2FFT\wnrom.v".
+        width = 16
+        addrw = 6
+    Summary:
+	no macro.
+Unit <wnrom> synthesized.
+
+Synthesizing Unit <complexmul>.
+    Related source file is "D:\ZJU\VERILOG\B2FFT\complexmul.v".
+        width = 16
+INFO:Xst:3210 - "D:\ZJU\VERILOG\B2FFT\complexmul.v" line 36: Output port <m_axis_dout_tvalid> of the instance <CM0> is unconnected or connected to loadless signal.
+    Summary:
+	no macro.
+Unit <complexmul> synthesized.
+
+Synthesizing Unit <fftstg_2>.
+    Related source file is "D:\ZJU\VERILOG\B2FFT\fftstg.v".
+        width = 16
+        N = 6
+        M = 5
+INFO:Xst:3210 - "D:\ZJU\VERILOG\B2FFT\fftstg.v" line 77: Output port <full_re> of the instance <FFU> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "D:\ZJU\VERILOG\B2FFT\fftstg.v" line 77: Output port <full_im> of the instance <FFU> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "D:\ZJU\VERILOG\B2FFT\fftstg.v" line 77: Output port <empty_re> of the instance <FFU> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "D:\ZJU\VERILOG\B2FFT\fftstg.v" line 77: Output port <empty_im> of the instance <FFU> is unconnected or connected to loadless signal.
+    Found 1-bit register for signal <bf_outing>.
+    Found 1-bit register for signal <en_out>.
+    Found 6-bit register for signal <cnt_out>.
+    Found 6-bit register for signal <cnt_bf>.
+    Found 16-bit register for signal <yout_re>.
+    Found 16-bit register for signal <yout_im>.
+    Found 6-bit adder for signal <cnt_bf[5]_GND_11_o_add_9_OUT> created at line 130.
+    Found 4-bit adder for signal <cnt_to_addr> created at line 146.
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred  46 D-type flip-flop(s).
+	inferred  11 Multiplexer(s).
+Unit <fftstg_2> synthesized.
+
+Synthesizing Unit <fftstg_3>.
+    Related source file is "D:\ZJU\VERILOG\B2FFT\fftstg.v".
+        width = 16
+        N = 6
+        M = 4
+INFO:Xst:3210 - "D:\ZJU\VERILOG\B2FFT\fftstg.v" line 77: Output port <full_re> of the instance <FFU> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "D:\ZJU\VERILOG\B2FFT\fftstg.v" line 77: Output port <full_im> of the instance <FFU> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "D:\ZJU\VERILOG\B2FFT\fftstg.v" line 77: Output port <empty_re> of the instance <FFU> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "D:\ZJU\VERILOG\B2FFT\fftstg.v" line 77: Output port <empty_im> of the instance <FFU> is unconnected or connected to loadless signal.
+    Found 1-bit register for signal <bf_outing>.
+    Found 1-bit register for signal <en_out>.
+    Found 6-bit register for signal <cnt_out>.
+    Found 6-bit register for signal <cnt_bf>.
+    Found 16-bit register for signal <yout_re>.
+    Found 16-bit register for signal <yout_im>.
+    Found 6-bit adder for signal <cnt_bf[5]_GND_12_o_add_9_OUT> created at line 130.
+    Found 3-bit adder for signal <cnt_to_addr> created at line 146.
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred  46 D-type flip-flop(s).
+	inferred  11 Multiplexer(s).
+Unit <fftstg_3> synthesized.
+
+Synthesizing Unit <fftstg_4>.
+    Related source file is "D:\ZJU\VERILOG\B2FFT\fftstg.v".
+        width = 16
+        N = 6
+        M = 3
+INFO:Xst:3210 - "D:\ZJU\VERILOG\B2FFT\fftstg.v" line 77: Output port <full_re> of the instance <FFU> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "D:\ZJU\VERILOG\B2FFT\fftstg.v" line 77: Output port <full_im> of the instance <FFU> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "D:\ZJU\VERILOG\B2FFT\fftstg.v" line 77: Output port <empty_re> of the instance <FFU> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "D:\ZJU\VERILOG\B2FFT\fftstg.v" line 77: Output port <empty_im> of the instance <FFU> is unconnected or connected to loadless signal.
+    Found 1-bit register for signal <bf_outing>.
+    Found 1-bit register for signal <en_out>.
+    Found 6-bit register for signal <cnt_out>.
+    Found 6-bit register for signal <cnt_bf>.
+    Found 16-bit register for signal <yout_re>.
+    Found 16-bit register for signal <yout_im>.
+    Found 6-bit adder for signal <cnt_bf[5]_GND_13_o_add_9_OUT> created at line 130.
+    Found 2-bit adder for signal <cnt_to_addr> created at line 146.
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred  46 D-type flip-flop(s).
+	inferred  11 Multiplexer(s).
+Unit <fftstg_4> synthesized.
+
+Synthesizing Unit <fftstg_5>.
+    Related source file is "D:\ZJU\VERILOG\B2FFT\fftstg.v".
+        width = 16
+        N = 6
+        M = 2
+INFO:Xst:3210 - "D:\ZJU\VERILOG\B2FFT\fftstg.v" line 77: Output port <full_re> of the instance <FFU> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "D:\ZJU\VERILOG\B2FFT\fftstg.v" line 77: Output port <full_im> of the instance <FFU> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "D:\ZJU\VERILOG\B2FFT\fftstg.v" line 77: Output port <empty_re> of the instance <FFU> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "D:\ZJU\VERILOG\B2FFT\fftstg.v" line 77: Output port <empty_im> of the instance <FFU> is unconnected or connected to loadless signal.
+    Found 1-bit register for signal <bf_outing>.
+    Found 1-bit register for signal <en_out>.
+    Found 6-bit register for signal <cnt_out>.
+    Found 6-bit register for signal <cnt_bf>.
+    Found 16-bit register for signal <yout_re>.
+    Found 16-bit register for signal <yout_im>.
+    Found 6-bit adder for signal <cnt_bf[5]_GND_14_o_add_8_OUT> created at line 130.
+    Found 1-bit adder for signal <cnt_to_addr> created at line 146.
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred  46 D-type flip-flop(s).
+	inferred  11 Multiplexer(s).
+Unit <fftstg_5> synthesized.
+
+Synthesizing Unit <fftstg_fn>.
+    Related source file is "D:\ZJU\VERILOG\B2FFT\fftstg_fn.v".
+        width = 16
+        N = 6
+        M = 1
+WARNING:Xst:647 - Input <cnt_in<5:1>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 1-bit register for signal <bf_outing>.
+    Found 1-bit register for signal <en_out>.
+    Found 16-bit register for signal <reg_out_im>.
+    Found 16-bit register for signal <yout_re>.
+    Found 16-bit register for signal <yout_im>.
+    Found 16-bit register for signal <reg_out_re>.
+    Found 6-bit register for signal <cnt_bf>.
+    Found 6-bit register for signal <cnt_out>.
+    Found 6-bit adder for signal <cnt_bf[5]_GND_15_o_add_9_OUT> created at line 111.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  78 D-type flip-flop(s).
+	inferred   9 Multiplexer(s).
+Unit <fftstg_fn> synthesized.
+
+Synthesizing Unit <reage>.
+    Related source file is "D:\ZJU\VERILOG\B2FFT\reage.v".
+        width = 16
+        N = 6
+    Found 1-bit register for signal <enout>.
+    Found 7-bit register for signal <reage_cnt>.
+    Found 7-bit adder for signal <reage_cnt[6]_GND_16_o_add_2_OUT> created at line 79.
+    Found 6-bit subtractor for signal <cnt_ram_out> created at line 35.
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred   8 D-type flip-flop(s).
+	inferred   2 Multiplexer(s).
+Unit <reage> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 38
+ 1-bit adder                                           : 1
+ 16-bit adder                                          : 12
+ 16-bit subtractor                                     : 12
+ 2-bit adder                                           : 1
+ 3-bit adder                                           : 1
+ 4-bit adder                                           : 1
+ 5-bit adder                                           : 1
+ 6-bit adder                                           : 7
+ 6-bit subtractor                                      : 1
+ 7-bit adder                                           : 1
+# Registers                                            : 44
+ 1-bit register                                        : 14
+ 16-bit register                                       : 16
+ 6-bit register                                        : 13
+ 7-bit register                                        : 1
+# Multiplexers                                         : 67
+ 16-bit 2-to-1 multiplexer                             : 58
+ 6-bit 2-to-1 multiplexer                              : 8
+ 7-bit 2-to-1 multiplexer                              : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Reading core <ipcore_dir/fifo.ngc>.
+Reading core <ipcore_dir/rom_re.ngc>.
+Reading core <ipcore_dir/rom_im.ngc>.
+Reading core <ipcore_dir/compmul.ngc>.
+Reading Secure Unit <blk00000001>.
+Reading core <ipcore_dir/outram.ngc>.
+Loading core <fifo> for timing and area information for instance <FRE>.
+Loading core <fifo> for timing and area information for instance <FIM>.
+Loading core <rom_re> for timing and area information for instance <wnrerom>.
+Loading core <rom_im> for timing and area information for instance <wnimrom>.
+Loading core <compmul> for timing and area information for instance <CM0>.
+Loading core <outram> for timing and area information for instance <ram_re>.
+Loading core <outram> for timing and area information for instance <ram_im>.
+WARNING:Xst:2677 - Node <cnt_out_1> of sequential type is unconnected in block <mod4>.
+WARNING:Xst:2677 - Node <cnt_out_2> of sequential type is unconnected in block <mod4>.
+WARNING:Xst:2677 - Node <cnt_out_3> of sequential type is unconnected in block <mod4>.
+WARNING:Xst:2677 - Node <cnt_out_4> of sequential type is unconnected in block <mod4>.
+WARNING:Xst:2677 - Node <cnt_out_5> of sequential type is unconnected in block <mod4>.
+
+Synthesizing (advanced) Unit <corefft>.
+The following registers are absorbed into counter <mod0_in_cnt>: 1 register on signal <mod0_in_cnt>.
+Unit <corefft> synthesized (advanced).
+
+Synthesizing (advanced) Unit <fftstg_1>.
+The following registers are absorbed into counter <cnt_bf>: 1 register on signal <cnt_bf>.
+Unit <fftstg_1> synthesized (advanced).
+
+Synthesizing (advanced) Unit <fftstg_2>.
+The following registers are absorbed into counter <cnt_bf>: 1 register on signal <cnt_bf>.
+Unit <fftstg_2> synthesized (advanced).
+
+Synthesizing (advanced) Unit <fftstg_3>.
+The following registers are absorbed into counter <cnt_bf>: 1 register on signal <cnt_bf>.
+Unit <fftstg_3> synthesized (advanced).
+
+Synthesizing (advanced) Unit <fftstg_4>.
+The following registers are absorbed into counter <cnt_bf>: 1 register on signal <cnt_bf>.
+Unit <fftstg_4> synthesized (advanced).
+
+Synthesizing (advanced) Unit <fftstg_5>.
+The following registers are absorbed into counter <cnt_bf>: 1 register on signal <cnt_bf>.
+Unit <fftstg_5> synthesized (advanced).
+
+Synthesizing (advanced) Unit <fftstg_fn>.
+The following registers are absorbed into counter <cnt_bf>: 1 register on signal <cnt_bf>.
+Unit <fftstg_fn> synthesized (advanced).
+
+Synthesizing (advanced) Unit <reage>.
+The following registers are absorbed into counter <reage_cnt>: 1 register on signal <reage_cnt>.
+Unit <reage> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 30
+ 1-bit adder                                           : 1
+ 16-bit adder                                          : 12
+ 16-bit subtractor                                     : 12
+ 2-bit adder                                           : 1
+ 3-bit adder                                           : 1
+ 4-bit adder                                           : 1
+ 5-bit adder                                           : 1
+ 6-bit subtractor                                      : 1
+# Counters                                             : 8
+ 6-bit up counter                                      : 7
+ 7-bit up counter                                      : 1
+# Registers                                            : 306
+ Flip-Flops                                            : 306
+# Multiplexers                                         : 89
+ 1-bit 2-to-1 multiplexer                              : 32
+ 16-bit 2-to-1 multiplexer                             : 56
+ 6-bit 2-to-1 multiplexer                              : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <corefft> ...
+
+Optimizing unit <fftstg_1> ...
+
+Optimizing unit <fftstg_2> ...
+
+Optimizing unit <fftstg_3> ...
+
+Optimizing unit <fftstg_4> ...
+
+Optimizing unit <fftstg_5> ...
+
+Optimizing unit <fftstg_fn> ...
+
+Optimizing unit <reage> ...
+WARNING:Xst:2677 - Node <mod4/cnt_out_5> of sequential type is unconnected in block <corefft>.
+WARNING:Xst:2677 - Node <mod4/cnt_out_4> of sequential type is unconnected in block <corefft>.
+WARNING:Xst:2677 - Node <mod4/cnt_out_3> of sequential type is unconnected in block <corefft>.
+WARNING:Xst:2677 - Node <mod4/cnt_out_2> of sequential type is unconnected in block <corefft>.
+WARNING:Xst:2677 - Node <mod4/cnt_out_1> of sequential type is unconnected in block <corefft>.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block corefft, actual ratio is 44.
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_1> in Unit <mod4/FFU/FRE> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_i> in Unit <mod4/FFU/FRE> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <mod4/FFU/FRE> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i> in Unit <mod4/FFU/FRE> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_1> in Unit <mod4/FFU/FIM> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_i> in Unit <mod4/FFU/FIM> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <mod4/FFU/FIM> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i> in Unit <mod4/FFU/FIM> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_1> in Unit <mod3/FFU/FRE> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_i> in Unit <mod3/FFU/FRE> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <mod3/FFU/FRE> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i> in Unit <mod3/FFU/FRE> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_1> in Unit <mod3/FFU/FIM> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_i> in Unit <mod3/FFU/FIM> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <mod3/FFU/FIM> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i> in Unit <mod3/FFU/FIM> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_1> in Unit <mod2/FFU/FRE> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_i> in Unit <mod2/FFU/FRE> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <mod2/FFU/FRE> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i> in Unit <mod2/FFU/FRE> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_1> in Unit <mod2/FFU/FIM> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_i> in Unit <mod2/FFU/FIM> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <mod2/FFU/FIM> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i> in Unit <mod2/FFU/FIM> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_1> in Unit <mod1/FFU/FRE> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_i> in Unit <mod1/FFU/FRE> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <mod1/FFU/FRE> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i> in Unit <mod1/FFU/FRE> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_1> in Unit <mod1/FFU/FIM> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_i> in Unit <mod1/FFU/FIM> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <mod1/FFU/FIM> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i> in Unit <mod1/FFU/FIM> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_1> in Unit <mod0/FFU/FRE> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_i> in Unit <mod0/FFU/FRE> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <mod0/FFU/FRE> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i> in Unit <mod0/FFU/FRE> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_1> in Unit <mod0/FFU/FIM> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_i> in Unit <mod0/FFU/FIM> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <mod0/FFU/FIM> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i> in Unit <mod0/FFU/FIM> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_1> in Unit <mod4/FFU/FRE> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_i> in Unit <mod4/FFU/FRE> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <mod4/FFU/FRE> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i> in Unit <mod4/FFU/FRE> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_1> in Unit <mod4/FFU/FIM> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_i> in Unit <mod4/FFU/FIM> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <mod4/FFU/FIM> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i> in Unit <mod4/FFU/FIM> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_1> in Unit <mod3/FFU/FRE> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_i> in Unit <mod3/FFU/FRE> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <mod3/FFU/FRE> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i> in Unit <mod3/FFU/FRE> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_1> in Unit <mod3/FFU/FIM> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_i> in Unit <mod3/FFU/FIM> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <mod3/FFU/FIM> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i> in Unit <mod3/FFU/FIM> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_1> in Unit <mod2/FFU/FRE> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_i> in Unit <mod2/FFU/FRE> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <mod2/FFU/FRE> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i> in Unit <mod2/FFU/FRE> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_1> in Unit <mod2/FFU/FIM> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_i> in Unit <mod2/FFU/FIM> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <mod2/FFU/FIM> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i> in Unit <mod2/FFU/FIM> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_1> in Unit <mod1/FFU/FRE> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_i> in Unit <mod1/FFU/FRE> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <mod1/FFU/FRE> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i> in Unit <mod1/FFU/FRE> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_1> in Unit <mod1/FFU/FIM> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_i> in Unit <mod1/FFU/FIM> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <mod1/FFU/FIM> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i> in Unit <mod1/FFU/FIM> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_1> in Unit <mod0/FFU/FRE> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_i> in Unit <mod0/FFU/FRE> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <mod0/FFU/FRE> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i> in Unit <mod0/FFU/FRE> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_1> in Unit <mod0/FFU/FIM> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_i> in Unit <mod0/FFU/FIM> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <mod0/FFU/FIM> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i> in Unit <mod0/FFU/FIM> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i> 
+FlipFlop mod0/cnt_bf_5 has been replicated 2 time(s)
+FlipFlop mod1/cnt_bf_4 has been replicated 2 time(s)
+FlipFlop mod2/cnt_bf_3 has been replicated 2 time(s)
+FlipFlop mod3/cnt_bf_2 has been replicated 2 time(s)
+FlipFlop mod4/cnt_bf_1 has been replicated 2 time(s)
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 360
+ Flip-Flops                                            : 360
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : corefft.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 19341
+#      GND                         : 53
+#      INV                         : 27
+#      LUT2                        : 3342
+#      LUT3                        : 1059
+#      LUT4                        : 1964
+#      LUT5                        : 47
+#      LUT6                        : 112
+#      MULT_AND                    : 2160
+#      MUXCY                       : 5135
+#      VCC                         : 33
+#      XORCY                       : 5409
+# FlipFlops/Latches                : 720
+#      FD                          : 40
+#      FDC                         : 373
+#      FDCE                        : 227
+#      FDP                         : 80
+# RAMS                             : 22
+#      RAMB8BWER                   : 22
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 73
+#      IBUF                        : 34
+#      OBUF                        : 39
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx9ftg256-2 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:             720  out of  11440     6%  
+ Number of Slice LUTs:                 6551  out of   5720   114% (*) 
+    Number used as Logic:              6551  out of   5720   114% (*) 
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:   6821
+   Number with an unused Flip Flop:    6101  out of   6821    89%  
+   Number with an unused LUT:           270  out of   6821     3%  
+   Number of fully used LUT-FF pairs:   450  out of   6821     6%  
+   Number of unique control sets:        88
+
+IO Utilization: 
+ Number of IOs:                          74
+ Number of bonded IOBs:                  74  out of    186    39%  
+
+Specific Feature Utilization:
+ Number of Block RAM/FIFO:               11  out of     32    34%  
+    Number using Block RAM only:         11
+ Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
+
+WARNING:Xst:1336 -  (*) More than 100% of Device resources are used
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 742   |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -2
+
+   Minimum period: 15.356ns (Maximum Frequency: 65.122MHz)
+   Minimum input arrival time before clock: 5.793ns
+   Maximum output required time after clock: 5.900ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 15.356ns (frequency: 65.122MHz)
+  Total number of paths / destination ports: 27889447086 / 1648
+-------------------------------------------------------------------------
+Delay:               15.356ns (Levels of Logic = 47)
+  Source:            mod0/FFU/FRE/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.WIDE_PRIM9.ram (RAM)
+  Destination:       mod0/yout_im_15 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: mod0/FFU/FRE/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.WIDE_PRIM9.ram to mod0/yout_im_15
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     RAMB8BWER:CLKAWRCLK->DOADO0    4   2.100   0.804  ramloop[0].ram.r/s6_noinit.ram/SDP.WIDE_PRIM9.ram (DOUTB<0>)
+     end scope: 'mod0/FFU/FRE/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr:DOUTB<0>'
+     end scope: 'mod0/FFU/FRE:dout<0>'
+     LUT2:I1->O           20   0.254   1.394  mod0/Mmux_cmp_in_re17 (mod0/cmp_in_re<0>)
+     begin scope: 'mod0/CMP/CM0:s_axis_a_tdata<0>'
+     begin scope: 'mod0/CMP/CM0/blk00000001:s_axis_a_tdata<0>'
+     SEC:in->out           1   0.250   0.000  sec_inst (sec_net)
+     SEC:in->out           1   0.215   0.000  sec_inst (sec_net)
+     SEC:in->out           1   0.023   0.000  sec_inst (sec_net)
+     SEC:in->out           1   0.023   0.000  sec_inst (sec_net)
+     SEC:in->out           1   0.023   0.000  sec_inst (sec_net)
+     SEC:in->out           1   0.023   0.000  sec_inst (sec_net)
+     SEC:in->out           1   0.023   0.000  sec_inst (sec_net)
+     SEC:in->out           1   0.023   0.000  sec_inst (sec_net)
+     SEC:in->out           1   0.023   0.000  sec_inst (sec_net)
+     SEC:in->out           1   0.023   0.000  sec_inst (sec_net)
+     SEC:in->out           1   0.023   0.000  sec_inst (sec_net)
+     SEC:in->out           1   0.023   0.000  sec_inst (sec_net)
+     SEC:in->out           1   0.023   0.000  sec_inst (sec_net)
+     SEC:in->out           1   0.023   0.000  sec_inst (sec_net)
+     SEC:in->out           1   0.023   0.000  sec_inst (sec_net)
+     SEC:in->out           1   0.023   0.000  sec_inst (sec_net)
+     SEC:in->out           0   0.023   0.000  sec_inst (sec_net)
+     SEC:in->out          24   0.206   1.608  sec_inst (sec_net)
+     SEC:in->out           1   0.235   0.000  sec_inst (sec_net)
+     SEC:in->out           0   0.215   0.000  sec_inst (sec_net)
+     SEC:in->out           3   0.206   0.874  sec_inst (sec_net)
+     SEC:in->out           1   0.250   0.000  sec_inst (sec_net)
+     SEC:in->out           1   0.215   0.000  sec_inst (sec_net)
+     SEC:in->out           0   0.023   0.000  sec_inst (sec_net)
+     SEC:in->out           6   0.206   0.984  sec_inst (sec_net)
+     SEC:in->out           1   0.250   0.000  sec_inst (sec_net)
+     SEC:in->out           1   0.215   0.000  sec_inst (sec_net)
+     SEC:in->out           1   0.023   0.000  sec_inst (sec_net)
+     SEC:in->out           1   0.023   0.000  sec_inst (sec_net)
+     SEC:in->out           1   0.023   0.000  sec_inst (sec_net)
+     SEC:in->out           0   0.023   0.000  sec_inst (sec_net)
+     SEC:in->out           8   0.206   1.052  sec_inst (sec_net)
+     SEC:in->out           1   0.250   0.000  sec_inst (sec_net)
+     SEC:in->out           1   0.215   0.000  sec_inst (sec_net)
+     SEC:in->out           1   0.023   0.000  sec_inst (sec_net)
+     SEC:in->out           1   0.023   0.000  sec_inst (sec_net)
+     SEC:in->out           1   0.023   0.000  sec_inst (sec_net)
+     SEC:in->out           2   0.206   0.726  sec_inst (sec_net)
+     SEC:in->out           1   0.254   0.000  sec_inst (sec_net)
+     SEC:in->out           1   0.215   0.000  sec_inst (sec_net)
+     SEC:in->out           1   0.206   0.682  sec_inst (sec_net)
+     end scope: 'mod0/CMP/CM0/blk00000001:m_axis_dout_tdata<70>'
+     end scope: 'mod0/CMP/CM0:m_axis_dout_tdata<70>'
+     LUT3:I2->O            1   0.254   0.000  mod0/Mmux_bf_y0_im[15]_cmp_out_im[15]_mux_17_OUT71 (mod0/bf_y0_im[15]_cmp_out_im[15]_mux_17_OUT<15>)
+     FDC:D                     0.074          mod0/yout_im_15
+    ----------------------------------------
+    Total                     15.356ns (7.232ns logic, 8.124ns route)
+                                       (47.1% logic, 52.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 413 / 413
+-------------------------------------------------------------------------
+Offset:              5.793ns (Levels of Logic = 2)
+  Source:            areset (PAD)
+  Destination:       mod0_in_re_0 (FF)
+  Destination Clock: clk rising
+
+  Data Path: areset to mod0_in_re_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            21   1.328   1.309  areset_IBUF (areset_IBUF)
+     INV:I->O            360   0.255   2.442  areset_inv1_INV_0 (areset_inv)
+     FDC:CLR                   0.459          mod0_in_re_0
+    ----------------------------------------
+    Total                      5.793ns (2.042ns logic, 3.751ns route)
+                                       (35.2% logic, 64.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 54 / 39
+-------------------------------------------------------------------------
+Offset:              5.900ns (Levels of Logic = 2)
+  Source:            out_reager/reage_cnt_0 (FF)
+  Destination:       dout_cnt<5> (PAD)
+  Source Clock:      clk rising
+
+  Data Path: out_reager/reage_cnt_0 to dout_cnt<5>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q             13   0.525   1.528  out_reager/reage_cnt_0 (out_reager/reage_cnt_0)
+     LUT6:I1->O            1   0.254   0.681  out_reager/Msub_cnt_ram_out_xor<5>11 (dout_cnt_5_OBUF)
+     OBUF:I->O                 2.912          dout_cnt_5_OBUF (dout_cnt<5>)
+    ----------------------------------------
+    Total                      5.900ns (3.691ns logic, 2.209ns route)
+                                       (62.6% logic, 37.4% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |   15.356|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 7.00 secs
+Total CPU time to Xst completion: 6.44 secs
+ 
+--> 
+
+Total memory usage is 263108 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   17 (   0 filtered)
+Number of infos    :  101 (   0 filtered)
+
