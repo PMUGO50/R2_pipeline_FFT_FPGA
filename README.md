@@ -4,7 +4,7 @@ Here is an implemntation of **Radix-2 pipeline FFT on FPGA** with Verilog.
 
 FFT of this program has **512 inputs**, so it's resolution is fs/512. The width of data is **16 and signed**.
 
-The program it has not been tested on FPGA yet, it has just passed the behavioral simulation and RTL synthesis. Synthesis report is 'corefft.syr', and explanation to warnings in report is in 'warningexp.md'.
+The program it has not been tested on FPGA yet, it has just passed the behavioral simulation and RTL synthesis. Summary part of synthesis report is 'corefft.syr', and explanation to some synthesis warnings is in 'warningexp.md'.
 
 ## program code
 
