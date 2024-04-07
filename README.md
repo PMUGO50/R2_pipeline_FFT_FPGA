@@ -18,5 +18,7 @@ Some aided matlab code is in 'matlab_aid'. These files are used for sampled wave
 
 Testbench code is in 'verilog_tb'. Where simulation can be done with 'top_tb.v'. Sampled signal is $x(t) = 50[\sin(2\pi t) + \sin(14\pi t) + \sin(52\pi t)]$, that is a superposition of 1Hz, 7Hz, 26Hz sine wave. And sampling frequency is 128Hz.
 
-testbench will give a result 'fftout_fpga_sim.csv', and 'wave_generator.m' will also give a result 'fftout_matlab.csv'. The two will be compared in 'erroraly.m' to indicate the effectiveness of this program.
+Testbench will give a result 'fftout_fpga_sim.csv', and 'wave_generator.m' will also give a result 'fftout_matlab.csv'. The two will be compared in 'erroraly.m' to indicate the effectiveness of this program.
+
+'erroraly.m' will plot the result of fft from both matlab and verilog simulation, which is 'fft_pic.png'. Meanwhile, 'erroraly.m' will also use both fft result to do inverse fft and restore sampled wave, which is 'ifft_pic.png'. 
 
