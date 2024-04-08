@@ -8,8 +8,8 @@ function wn_generator()
     end
     re = clipping(round(re), 32767, -32767);
     im = clipping(round(im), 32767, -32767);
-    re = dec2hex(re);
-    im = dec2hex(im);
+    re = dec2hex(re, 4);
+    im = dec2hex(im, 4);
     fl_re = fopen('romdata_re.coe','w');
     fprintf(fl_re, "MEMORY_INITIALIZATION_RADIX=16;\n");
     fprintf(fl_re, "MEMORY_INITIALIZATION_VECTOR=\n");
