@@ -4,7 +4,7 @@ function erroraly()
     fft_fpga_sim = fft_fpga_sim(:,2:3);
     fft_matlab = readmatrix("fftout_matlab.csv");
     fft_matlab = fft_matlab(:,2:3);
-    fs = 128;
+    fs = 10*10^6;
 
     total_relative_error_e = errorcal(fft_fpga_sim, fft_matlab);
     fprintf("total_relative_error_e = %.4f e-6\n", total_relative_error_e*1e6);

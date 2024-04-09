@@ -3,8 +3,8 @@
 module top_tb;
 	parameter width=16;
 	parameter N=9;
-	parameter halfT_oa = 10;
-	parameter halfT_ad = 50;
+	parameter halfT_oa = 10; //period=20ns, freq=50MHz
+	parameter halfT_ad = 50; //period=100ns, freq=10MHz
 	
 	reg clk;
 	reg areset;

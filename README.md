@@ -16,7 +16,7 @@ Some aided matlab code is in 'matlab_aid'. These files are used for sampled wave
 
 ## Testbench code
 
-Testbench code is in 'verilog_tb'. Where simulation can be done with 'top_tb.v'. Sampled signal is rectangular signal with period $T=1\mathrm{s}$ .And sampling frequency is 128Hz.
+Testbench code is in 'verilog_tb'. Where simulation can be done with 'top_tb.v'. Sampled signal is rectangular signal with frequency $f_0=500\mathrm{kHz}$ .And sampling frequency is $f_s=10\mathrm{MHz}$.
 
 Testbench will give a result 'fftout_fpga_sim.csv', and 'wave_generator.m' will also give a result 'fftout_matlab.csv'. The two will be compared in 'erroraly.m' to indicate the effectiveness of this program.
 

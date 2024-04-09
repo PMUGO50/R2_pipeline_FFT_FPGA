@@ -1,6 +1,6 @@
 function wave_generator()
-    fs = 128;
-    f0 = 1;
+    fs = 10*10^6;
+    f0 = 5*10^5;
     t = (1/fs):(1/fs):(512/fs);
     
     x = xfunc(t, f0);
