@@ -58,7 +58,7 @@ module fftstg
 	
 	midfifo FFU(
 		.clk(clk),
-		.areset(areset),
+		.areset(~areset),
 		.en_wr(en_ffwr),
 		.en_rd(en_ffrd),
 		.in_re(ff_in_re),

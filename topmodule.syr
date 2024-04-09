@@ -1,0 +1,63 @@
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : topmodule.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 31674
+#      GND                         : 85
+#      INV                         : 47
+#      LUT2                        : 5483
+#      LUT3                        : 1588
+#      LUT4                        : 3457
+#      LUT5                        : 64
+#      LUT6                        : 144
+#      MULT_AND                    : 3456
+#      MUXCY                       : 8588
+#      VCC                         : 68
+#      XORCY                       : 8694
+# FlipFlops/Latches                : 1449
+#      FD                          : 68
+#      FDC                         : 623
+#      FDCE                        : 603
+#      FDP                         : 137
+#      FDPE                        : 18
+# RAMS                             : 35
+#      RAMB16BWER                  : 1
+#      RAMB8BWER                   : 34
+# Clock Buffers                    : 2
+#      BUFGP                       : 2
+# IO Buffers                       : 60
+#      IBUF                        : 18
+#      OBUF                        : 42
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx9ftg256-2 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:            1449  out of  11440    12%  
+ Number of Slice LUTs:                10783  out of   5720   188% (*) 
+    Number used as Logic:             10783  out of   5720   188% (*) 
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:  11377
+   Number with an unused Flip Flop:    9928  out of  11377    87%  
+   Number with an unused LUT:           594  out of  11377     5%  
+   Number of fully used LUT-FF pairs:   855  out of  11377     7%  
+   Number of unique control sets:       156
+
+IO Utilization: 
+ Number of IOs:                          62
+ Number of bonded IOBs:                  62  out of    186    33%  
+
+Specific Feature Utilization:
+ Number of Block RAM/FIFO:               18  out of     32    56%  
+    Number using Block RAM only:         18
+ Number of BUFG/BUFGCTRLs:                2  out of     16    12%  
+
+WARNING:Xst:1336 -  (*) More than 100% of Device resources are used

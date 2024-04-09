@@ -9,17 +9,13 @@ module corefft
 	input clk,
 	input areset,
 	input din_en,
-	input signed [width-1:0] din_re,
-	input signed [width-1:0] din_im,
+	input signed [width-1:0] din,
+	input [NALL-1:0] din_cnt,
 	output dout_en,
 	output [NALL-1:0] dout_cnt,
 	output signed [width-1:0] dout_re,
 	output signed [width-1:0] dout_im
 );
-
-	reg signed [width-1:0] mod0_in_re, mod0_in_im;
-	reg mod0_in_en;
-	reg [NALL-1:0] mod0_in_cnt;
 	
 	wire mod0_out_en, mod1_out_en, mod2_out_en,
 		mod3_out_en, mod4_out_en, mod5_out_en,
@@ -38,25 +34,6 @@ module corefft
 		mod6_out_re, mod6_out_im,
 		mod7_out_re, mod7_out_im,
 		mod8_out_re, mod8_out_im;
-		
-//////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////input buffer/////////////////////////////////////
-	
-	always @(posedge clk, negedge areset) begin
-		if(!areset) begin
-			mod0_in_re <= 16'd0;
-			mod0_in_im <= 16'd0;
-			mod0_in_en <= 1'b0;
-			mod0_in_cnt <= {NALL{1'b0}};
-		end
-		else begin
-			mod0_in_re <= din_re;
-			mod0_in_im <= din_im;
-			mod0_in_en <= din_en;
-			if(mod0_in_en) mod0_in_cnt <= mod0_in_cnt + 1'b1;
-			else mod0_in_cnt <= {NALL{1'b0}};
-		end
-	end
 	
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////fft stage instance//////////////////////////////////
@@ -64,10 +41,10 @@ module corefft
 	fftstg mod0(
 		.clk(clk),
 		.areset(areset),
-		.en_in(mod0_in_en),
-		.cnt_in(mod0_in_cnt),
-		.xin_re(mod0_in_re),
-		.xin_im(mod0_in_im),
+		.en_in(din_en),
+		.cnt_in(din_cnt),
+		.xin_re(din),
+		.xin_im({width{1'b0}}),
 		.en_out(mod0_out_en),
 		.cnt_out(mod0_out_cnt),
 		.yout_re(mod0_out_re),

@@ -12,9 +12,9 @@ end
 
 function x = xfunc(t, f0)
 %%%from following functions choose one
-    x = 50*(sin(f0*(2*pi)*t) + sin(7*f0*(2*pi)*t) + sin(26*f0*(2*pi)*t));
+    %x = 50*(sin(f0*(2*pi)*t) + sin(7*f0*(2*pi)*t) + sin(26*f0*(2*pi)*t));
     %x = 50.*(2*pi*16*f0).*exp(-(2*pi*16*f0).*t);
-    %x = 50*square(2*pi*f0*t);
+    x = 50*square(2*pi*f0*t);
 end
 
 function sampgen(x)

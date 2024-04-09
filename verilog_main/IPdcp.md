@@ -12,7 +12,7 @@
 
 - Output Width: 33(natural)
 
-## FIFO
+## FIFO (in 'midfifo.v')
 
 - Interface: Native
 
@@ -26,11 +26,33 @@
 
 - Depth: 512
 
-- Full/Empty flag: False
+- Almost Full/Empty flag: False
 
 - Asynchronous reset: True
 
 - Data count: False
+
+## FIFO (in 'inbuffer.v')
+
+- Interface: Native
+
+- R/W clock: Independent CLK
+
+- Memory type: BRAM
+
+- Read Mode: Standard
+
+- Width: 16
+
+- Depth: 1024 (which is actually 1023)
+
+- Almost Full/Empty flag: False
+
+- Asynchronous reset: True
+
+- Data count: False
+
+**Be careful: As datasheet says, after FIFO reset, it needs a few clock period to get out of 'RESET state', so input mustn't be enabled in these periods.**
 
 ## Block RAM
 
