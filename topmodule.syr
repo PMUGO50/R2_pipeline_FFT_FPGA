@@ -6,29 +6,29 @@ Top Level Output File Name         : topmodule.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 31674
-#      GND                         : 85
-#      INV                         : 47
-#      LUT2                        : 5483
-#      LUT3                        : 1588
-#      LUT4                        : 3457
-#      LUT5                        : 64
-#      LUT6                        : 144
+# BELS                             : 31517
+#      GND                         : 83
+#      INV                         : 43
+#      LUT1                        : 8
+#      LUT2                        : 5446
+#      LUT3                        : 1565
+#      LUT4                        : 3427
+#      LUT5                        : 56
+#      LUT6                        : 123
 #      MULT_AND                    : 3456
-#      MUXCY                       : 8588
-#      VCC                         : 68
-#      XORCY                       : 8694
-# FlipFlops/Latches                : 1449
-#      FD                          : 68
-#      FDC                         : 623
-#      FDCE                        : 603
-#      FDP                         : 137
-#      FDPE                        : 18
-# RAMS                             : 35
-#      RAMB16BWER                  : 1
+#      MUXCY                       : 8559
+#      VCC                         : 67
+#      XORCY                       : 8684
+# FlipFlops/Latches                : 1313
+#      FD                          : 64
+#      FDC                         : 542
+#      FDCE                        : 554
+#      FDP                         : 128
+#      FDPE                        : 25
+# RAMS                             : 34
 #      RAMB8BWER                   : 34
-# Clock Buffers                    : 2
-#      BUFGP                       : 2
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
 # IO Buffers                       : 60
 #      IBUF                        : 18
 #      OBUF                        : 42
@@ -40,24 +40,32 @@ Selected Device : 6slx9ftg256-2
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:            1449  out of  11440    12%  
- Number of Slice LUTs:                10783  out of   5720   188% (*) 
-    Number used as Logic:             10783  out of   5720   188% (*) 
+ Number of Slice Registers:            1313  out of  11440    11%  
+ Number of Slice LUTs:                10668  out of   5720   186% (*) 
+    Number used as Logic:             10668  out of   5720   186% (*) 
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:  11377
-   Number with an unused Flip Flop:    9928  out of  11377    87%  
-   Number with an unused LUT:           594  out of  11377     5%  
-   Number of fully used LUT-FF pairs:   855  out of  11377     7%  
-   Number of unique control sets:       156
+ Number of LUT Flip Flop pairs used:  11190
+   Number with an unused Flip Flop:    9877  out of  11190    88%  
+   Number with an unused LUT:           522  out of  11190     4%  
+   Number of fully used LUT-FF pairs:   791  out of  11190     7%  
+   Number of unique control sets:       140
 
 IO Utilization: 
- Number of IOs:                          62
- Number of bonded IOBs:                  62  out of    186    33%  
+ Number of IOs:                          61
+ Number of bonded IOBs:                  61  out of    186    32%  
 
 Specific Feature Utilization:
- Number of Block RAM/FIFO:               18  out of     32    56%  
-    Number using Block RAM only:         18
- Number of BUFG/BUFGCTRLs:                2  out of     16    12%  
+ Number of Block RAM/FIFO:               17  out of     32    53%  
+    Number using Block RAM only:         17
+ Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
 
 WARNING:Xst:1336 -  (*) More than 100% of Device resources are used
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
