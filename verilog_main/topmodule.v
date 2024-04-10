@@ -7,8 +7,7 @@ module topmodule
 (
 	input clk,
 	input areset,
-	input clk_ad,
-	input en_ad,
+	input din_en,
 	input signed [width-1:0] din_ad,
 	output dout_en,
 	output [NALL-1:0] dout_cnt,
@@ -16,22 +15,25 @@ module topmodule
 	output signed [width-1:0] dout_im
 );
 
-	wire signed [width-1:0] dcore;
-	wire en_core;
-	wire [NALL-1:0] cnt_core;
+	reg signed [width-1:0] dcore;
+	reg en_core;
+	reg [NALL-1:0] cnt_core;
 	
-	inbuffer u_inbuffer(
-		.clk(clk),
-		.areset(areset),
-		.clk_ad(clk_ad),
-		.en_ad(en_ad),
-		.din_ad(din_ad),
-		.dcore(dcore),
-		.en_core(en_core),
-		.cnt_core(cnt_core)
-	);
-	defparam u_inbuffer.width = width;
-	defparam u_inbuffer.NALL = NALL; //point=512
+	always @(posedge clk, negedge areset) begin
+		if(!areset) begin
+			dcore <= {width{1'b0}};
+			en_core <= 1'b0;
+			cnt_core <= {NALL{1'b1}};
+		end
+		else if (din_en) begin
+			dcore <= din_ad;
+			en_core <= din_en;
+			cnt_core <= cnt_core + 1'b1;
+		end
+		else begin
+			en_core <= din_en;
+		end
+	end
 	
 	corefft u_corefft(
 		.clk(clk),
