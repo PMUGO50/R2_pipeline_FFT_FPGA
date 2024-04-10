@@ -31,10 +31,7 @@ module top_tb;
 
 	initial begin
 		clk <= 1;
-		forever begin
-			#(halfT_oa);
-			clk <= ~clk;
-		end
+		forever #(halfT_oa) clk <= ~clk;
 	end
 	
 	initial begin
@@ -48,11 +45,10 @@ module top_tb;
 		#(20*halfT_oa+1); din_en <= 1;
 		//As datasheet says, after FIFO reset, it needs a few clock period to get out of 'RESET state', so input mustn't be enabled in these periods.
 		
-		for(i=0;i<(2**N-1);i=i+1) begin
+		for(i=0;i<(2**N);i=i+1) begin
 			din_ad <= dtest[i];
 			#(2*halfT_oa);
 		end
-		din_ad <= dtest[2**N-1]; #(2*halfT_oa);
 		din_ad <= {width{1'b0}};
 		din_en <= 0;
 	end
