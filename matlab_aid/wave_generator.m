@@ -1,6 +1,6 @@
 function wave_generator()
-    fs = 10*10^6;
-    f0 = 5*10^5;
+    fs = 40*10^6;
+    f0 = 1*10^6;
     t = (1/fs):(1/fs):(512/fs);
     
     x = xfunc(t, f0);
@@ -12,7 +12,8 @@ end
 
 function x = xfunc(t, f0)
 %%%from following functions choose one
-    %x = 50*(sin(f0*(2*pi)*t) + sin(7*f0*(2*pi)*t) + sin(26*f0*(2*pi)*t));
+    %x = 50*sin(f0*t);
+    %x = 50*(sin(f0*(2*pi)*t) + sin(3*f0*(2*pi)*t) + sin(7*f0*(2*pi)*t));
     %x = 50.*(2*pi*16*f0).*exp(-(2*pi*16*f0).*t);
     x = 50*square(2*pi*f0*t);
 end
