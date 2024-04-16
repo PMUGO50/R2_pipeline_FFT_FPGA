@@ -7,15 +7,16 @@ function wave_generator()
     x = round(x).';
     sampgen(x);
     fx = ffttest(x);
-    test_ploting_amp(fx, fs);
+    ploting_amp(fx, fs);
 end
 
 function x = xfunc(t, f0)
 %%%from following functions choose one
-    %x = 50*sin(f0*t);
+    %x = 50*sin(2*pi*f0*t);
     %x = 50*(sin(f0*(2*pi)*t) + sin(3*f0*(2*pi)*t) + sin(7*f0*(2*pi)*t));
     %x = 50.*(2*pi*16*f0).*exp(-(2*pi*16*f0).*t);
     x = 50*square(2*pi*f0*t);
+    %x = 50.*t./t;
 end
 
 function sampgen(x)
@@ -38,14 +39,16 @@ function fx = ffttest(x)
     writematrix(datafl, 'fftout_matlab.csv');
 end
 
-function test_ploting_amp(fx, fs)
+function ploting_amp(fx, fs)
     N = length(fx);
     f = 0:(N-1);
-    f = f*fs/N;
-    amp_fx = sqrt(real(fx).^2 + imag(fx).^2);
+    f = f*fs/N/(10^6);
     figure(1);
     ax = gca;
-    plot(ax, f, amp_fx, 'LineWidth', 1);
-    ax.XLabel.String = "freq/Hz";
+    plot(ax, f, real(fx)./N, 'LineWidth', 1, 'Color', 'r');
+    hold on;
+    plot(ax, f, imag(fx)./N, 'LineWidth', 1, 'Color', 'b');
+    legend("real", "imag");
+    ax.XLabel.String = "freq/MHz";
     ax.YLabel.String = "fft";
 end

@@ -2,10 +2,11 @@
 module topmodule
 #(
 	parameter width=16,
-	parameter NALL=9
+	parameter NALL=9,
+	parameter fdiv=24'd400000
 )
 (
-	input clk,
+	input clk, //40MHz
 	input areset,
 	input din_en,
 	input signed [width-1:0] din_ad,
@@ -48,4 +49,5 @@ module topmodule
 	);
 	defparam u_corefft.width = width;
 	defparam u_corefft.NALL = NALL; //point=512
+	defparam u_corefft.fdiv = fdiv;
 endmodule

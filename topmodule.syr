@@ -6,23 +6,23 @@ Top Level Output File Name         : topmodule.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 31517
+# BELS                             : 31586
 #      GND                         : 83
 #      INV                         : 43
-#      LUT1                        : 8
-#      LUT2                        : 5446
-#      LUT3                        : 1565
-#      LUT4                        : 3427
+#      LUT1                        : 26
+#      LUT2                        : 5444
+#      LUT3                        : 1563
+#      LUT4                        : 3425
 #      LUT5                        : 56
-#      LUT6                        : 123
+#      LUT6                        : 143
 #      MULT_AND                    : 3456
-#      MUXCY                       : 8559
+#      MUXCY                       : 8577
 #      VCC                         : 67
-#      XORCY                       : 8684
-# FlipFlops/Latches                : 1313
+#      XORCY                       : 8703
+# FlipFlops/Latches                : 1332
 #      FD                          : 64
-#      FDC                         : 542
-#      FDCE                        : 554
+#      FDC                         : 551
+#      FDCE                        : 564
 #      FDP                         : 128
 #      FDPE                        : 25
 # RAMS                             : 34
@@ -36,31 +36,29 @@ Primitive and Black Box Usage:
 Device utilization summary:
 ---------------------------
 
-Selected Device : 6slx9ftg256-2 
+Selected Device : 6slx100csg484-3 
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:            1313  out of  11440    11%  
- Number of Slice LUTs:                10668  out of   5720   186% (*) 
-    Number used as Logic:             10668  out of   5720   186% (*) 
+ Number of Slice Registers:            1332  out of  126576     1%  
+ Number of Slice LUTs:                10700  out of  63288    16%  
+    Number used as Logic:             10700  out of  63288    16%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:  11190
-   Number with an unused Flip Flop:    9877  out of  11190    88%  
-   Number with an unused LUT:           522  out of  11190     4%  
-   Number of fully used LUT-FF pairs:   791  out of  11190     7%  
-   Number of unique control sets:       140
+ Number of LUT Flip Flop pairs used:  11224
+   Number with an unused Flip Flop:    9892  out of  11224    88%  
+   Number with an unused LUT:           524  out of  11224     4%  
+   Number of fully used LUT-FF pairs:   808  out of  11224     7%  
+   Number of unique control sets:       141
 
 IO Utilization: 
  Number of IOs:                          61
- Number of bonded IOBs:                  61  out of    186    32%  
+ Number of bonded IOBs:                  61  out of    338    18%  
 
 Specific Feature Utilization:
- Number of Block RAM/FIFO:               17  out of     32    53%  
+ Number of Block RAM/FIFO:               17  out of    268     6%  
     Number using Block RAM only:         17
  Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
-
-WARNING:Xst:1336 -  (*) More than 100% of Device resources are used
 
 ---------------------------
 Partition Resource Summary:

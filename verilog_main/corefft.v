@@ -3,10 +3,11 @@
 module corefft
 #(
 	parameter width=16,
-	parameter NALL=9 //2^9=512
+	parameter NALL=9, //2^9=512
+	parameter fdiv=24'd400000
 )
 (
-	input clk,
+	input clk, //40MHz
 	input areset,
 	input din_en,
 	input signed [width-1:0] din,
@@ -200,5 +201,6 @@ module corefft
 	);
 	defparam out_reager.width = width;
 	defparam out_reager.N = NALL; //point=512
+	defparam out_reager.fdiv = fdiv;
 	
 endmodule

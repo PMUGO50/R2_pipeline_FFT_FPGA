@@ -3,10 +3,11 @@
 module reage
 #(
 	parameter width=16,
-	parameter N=9
+	parameter N=9,
+	parameter fdiv=24'd400000
 )
 (
-	input clk,
+	input clk, //40MHz
 	input areset,
 	input en_fft,
 	input [N-1:0] cnt_fft,
@@ -22,6 +23,8 @@ module reage
 	wire [N-1:0] addr;
 	wire [N-1:0] addr_rd;
 	reg [N:0] reage_cnt;
+	reg [23:0] freq_cnt; //make output data hold for (400000/40M) = (1/100) second
+	
 	assign addr_rd[N-1] = reage_cnt[0],
 		addr_rd[N-2] = reage_cnt[1],
 		addr_rd[N-3] = reage_cnt[2],
@@ -52,18 +55,32 @@ module reage
 	);
 	
 	always @(posedge clk, negedge areset) begin
-		if(!areset) begin
-			enout <= 1'b0;
-			reage_cnt <= 1'b0;
-		end
+		if(!areset) enout <= 1'b0;
 		else begin
 			if(&cnt_fft) enout <= 1'b1;//that is cnt_fft==9'd511
 			else if(reage_cnt[N]) enout <= 1'b0;
 			else enout <= enout;
-			
-			if(enout) reage_cnt <= reage_cnt + 1'b1;
-			else reage_cnt <= 1'b0;
 		end
 	end
-	assign cnt_ram_out = reage_cnt - 1'b1;
+	
+	always @(posedge clk, negedge areset) begin
+		if(!areset) begin
+			reage_cnt <= 1'b0;
+			freq_cnt <= 24'd0;
+		end
+		else begin
+			if(enout) begin
+				if(freq_cnt==fdiv) begin
+					reage_cnt <= reage_cnt + 1'b1;
+					freq_cnt <= 24'd0;
+				end
+				else freq_cnt <= freq_cnt + 24'd1;
+			end
+			else begin
+				reage_cnt <= 1'b0;
+				freq_cnt <= 24'd0;
+			end
+		end
+	end
+	assign cnt_ram_out = reage_cnt;
 endmodule
