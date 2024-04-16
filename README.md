@@ -30,7 +30,7 @@ Testbench code is in 'verilog_tb', where simulation can be done with 'top_tb.v'.
 
 Testbench will give a result 'fftout_fpga_sim.csv'.  'postchecker.m' will post-process the csv and plot frequency spectrum.
 
-仿真代码在 'verilog_tb' 中，可以启动 'top_tb.v' 来完成仿真。采样信号是一个频率为 $f_0=1\mathrm{MHz}$ 的方波信号。采样频率是 $f_s=40\mathrm{MHz}$ ，也是测试的 FPGA 的时钟频率。
+仿真代码在 'verilog_tb' 中，可以启动 'top_tb.v' 来完成仿真。采样信号是一个频率为 $f_0=1\mathrm{MHz}$ 的方波信号。**采样频率是 $f_s=40\mathrm{MHz}$ ，也是测试的 FPGA 的时钟频率**。
 
 仿真文件将给出一个仿真结果 'fftout_fpga_sim.csv' ，'postchecker.m' 将对其进行后处理并画出频谱图。
 
