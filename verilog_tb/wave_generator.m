@@ -1,22 +1,21 @@
 function wave_generator()
     fs = 40*10^6;
-    f0 = 1*10^6;
+    f0 = 10^6;
     t = (1/fs):(1/fs):(512/fs);
     
-    x = xfunc(t, f0);
+    x = xfunc(t, f0, 100);
     x = round(x).';
     sampgen(x);
     fx = ffttest(x);
     ploting_amp(fx, fs);
 end
 
-function x = xfunc(t, f0)
+function x = xfunc(t, f0, a)
 %%%from following functions choose one
-    %x = 50*sin(2*pi*f0*t);
-    %x = 50*(sin(f0*(2*pi)*t) + sin(3*f0*(2*pi)*t) + sin(7*f0*(2*pi)*t));
-    %x = 50.*(2*pi*16*f0).*exp(-(2*pi*16*f0).*t);
-    x = 50*square(2*pi*f0*t);
-    %x = 50.*t./t;
+    %x = a*sin(2*pi*f0*t);
+    %x = a*(sin(f0*(2*pi)*t) + sin(3*f0*(2*pi)*t) + sin(7*f0*(2*pi)*t));
+    %x = a.*(2*pi*16*f0).*exp(-(2*pi*16*f0).*t);
+    x = a*square(2*pi*f0*t);
 end
 
 function sampgen(x)
@@ -51,4 +50,6 @@ function ploting_amp(fx, fs)
     legend("real", "imag");
     ax.XLabel.String = "freq/MHz";
     ax.YLabel.String = "fft";
+    figure(2);
+    plot(f, abs(fx)./N, 'LineWidth', 1, 'Color', 'r');
 end
