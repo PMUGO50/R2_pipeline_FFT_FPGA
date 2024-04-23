@@ -4,7 +4,7 @@ Here is an implementation of **Radix-2 pipeline FFT on FPGA** with Verilog.
 
 FFT of this program has **512 inputs**, so it's resolution is fs/512. The width of data is **16 and signed**.
 
-**Note that input amplitude can not be too large. As an example, if input is $Asin(2\pi f_0 t)$, then $A$ should be smaller than around 550**, otherwise an overflow will occur.
+**Note that input amplitude can not be too large. As an example, if input is $A\sin(2\pi f_0 t)$, then $A$ should be smaller than around 550**, otherwise an overflow will occur.
 
 - [x] Behavioral simulation
 
@@ -12,7 +12,7 @@ FFT of this program has **512 inputs**, so it's resolution is fs/512. The width 
 
 - [x] FPGA board test
 
-- [] Try to solve overflow problem with a self-adaptative method
+- [ ] Try to solve overflow problem with a self-adaptative method
 
 Summary part of synthesis report is 'topmodule.syr', and explanation to some synthesis warnings is in 'warningexp.md'.
 
@@ -20,7 +20,7 @@ Summary part of synthesis report is 'topmodule.syr', and explanation to some syn
 
 本程序的 FFT 是 **512 点**的，分辨率为采样频率的 1/512 ，全程数据位宽是 **16 位符号数**。
 
-**注意输入信号的幅值不能太大。一个例子是，如果输入 $Asin(2\pi f_0 t)$, 那么 $A$ 应当小于 550 左右**，否则会有数据溢出现象。
+**注意输入信号的幅值不能太大。一个例子是，如果输入 $A\sin(2\pi f_0 t)$, 那么 $A$ 应当小于 550 左右**，否则会有数据溢出现象。
 
 - [x] 通过行为仿真
 
@@ -28,7 +28,7 @@ Summary part of synthesis report is 'topmodule.syr', and explanation to some syn
 
 - [x] 通过上板测试
 
-- [] 尝试自适应解决数据溢出问题
+- [ ] 尝试自适应解决数据溢出问题
 
 综合报告的总结部分放在 'topmodule.syr' 中，对综合过程中出现的 warning 在 'warningexp.md' 中有解释。
 
