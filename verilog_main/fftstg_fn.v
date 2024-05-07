@@ -4,7 +4,8 @@ module fftstg_fn
 #(
 	parameter width=16,
 	parameter N=9,
-	parameter M=9
+	parameter M=9,
+	parameter scale=0
 )
 (
 	input clk,
@@ -68,7 +69,12 @@ module fftstg_fn
 		bf_x1_re = (en_bf)? xin_re : {width{1'b0}},
 		bf_x1_im = (en_bf)? xin_im : {width{1'b0}};
 		
-	butterfly BFU(
+	butterfly
+	#(
+		.width(width),
+		.scale(scale)
+	)
+	BFU (
 		.in0_re(bf_x0_re),
 		.in0_im(bf_x0_im),
 		.in1_re(bf_x1_re),

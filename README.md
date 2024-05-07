@@ -2,9 +2,7 @@
 
 Here is an implementation of **Radix-2 pipeline FFT on FPGA** with Verilog.
 
-FFT of this program has **512 inputs**, so it's resolution is fs/512. The width of data is **16 and signed**.
-
-**Note that input amplitude can not be too large. As an example, if input is $A\sin(2\pi f_0 t)$, then $A$ should be smaller than around 550**, otherwise an overflow will occur.
+FFT of this program has **512 inputs**, so it's resolution is fs/512. The width of data is **16 and signed**. Output frequency can be changed by adjust FDIV in 'fftpara.v', which satisfies $f_{out} = f_{clk}/\mathrm{FDIV}$.
 
 - [x] Behavioral simulation
 
@@ -12,15 +10,13 @@ FFT of this program has **512 inputs**, so it's resolution is fs/512. The width 
 
 - [x] FPGA board test
 
-- [ ] Try to solve overflow problem with a self-adaptative method
+- [X] Solve overflow by scaling data
 
-Summary part of synthesis report is 'topmodule.syr', and explanation to some synthesis warnings is in 'warningexp.md'.
+Summary part of synthesis report is 'topmodule.syr'.
 
 本仓库是用 Verilog 对基2 FFT 在 FPGA 上的实现。
 
-本程序的 FFT 是 **512 点**的，分辨率为采样频率的 1/512 ，全程数据位宽是 **16 位符号数**。
-
-**注意输入信号的幅值不能太大。一个例子是，如果输入 $A\sin(2\pi f_0 t)$, 那么 $A$ 应当小于 550 左右**，否则会有数据溢出现象。
+本程序的 FFT 是 **512 点**的，分辨率为采样频率的 1/512 ，全程数据位宽是 **16 位符号数**。可以通过调整 'fftpara.v' 中的 FDIV 来调整输出频率，$f_{out} = f_{clk}/\mathrm{FDIV}$。
 
 - [x] 通过行为仿真
 
@@ -28,9 +24,9 @@ Summary part of synthesis report is 'topmodule.syr', and explanation to some syn
 
 - [x] 通过上板测试
 
-- [ ] 尝试自适应解决数据溢出问题
+- [X] 通过缩放数据解决溢出问题
 
-综合报告的总结部分放在 'topmodule.syr' 中，对综合过程中出现的 warning 在 'warningexp.md' 中有解释。
+综合报告的总结部分是 'topmodule.syr'。
 
 ## Implementation code
 
@@ -46,14 +42,10 @@ Some aided MATLAB code is in 'matlab_aid'. This MATLAB file is used for sampled,
 
 ## Testbench code
 
-Testbench code is in 'verilog_tb', where simulation can be done with 'top_tb.v'. Sampled signal can be generated from 'wave_generator.m'.And **sampling frequency is $f_s=40\mathrm{MHz}$, which is also clock frequency of FPGA in testbench**.
+Testbench code is in 'verilog_tb', where simulation can be done with 'top_tb.v'. Here input signal for testbench is a rectangular signal with frequency $f_0=1\mathrm{MHz}$, **whose sampling frequency is $f_s=40\mathrm{MHz}$, which is also clock frequency of FPGA in testbench**.
 
-Testbench will give a result 'fftout_fpga_sim.csv'.  'postchecker.m' will post-process the csv and plot frequency spectrum.
+Testbench will give a result 'fftout_fpga_sim.csv'. 'postchecker.m' will post-process the csv and plot frequency spectrum, which is 'FPGAFFT_RECT.png' here.
 
-When sampled signal is rectangular signal with frequency $f_0=1\mathrm{MHz}$ , simulation result is 'fft_amplitude.png' here.
+仿真代码在 'verilog_tb' 中，可以启动 'top_tb.v' 来完成仿真。这里 testbench 的输入信号是一个频率为 $f_0=1\mathrm{MHz}$ 的方波信号，**采样该信号的频率是 $f_s=40\mathrm{MHz}$ ，也是测试的 FPGA 的时钟频率**。
 
-仿真代码在 'verilog_tb' 中，可以启动 'top_tb.v' 来完成仿真。采样信号可以由 'wave_generator.m' 生成。**采样频率是 $f_s=40\mathrm{MHz}$ ，也是测试的 FPGA 的时钟频率**。
-
-仿真文件将给出一个仿真结果 'fftout_fpga_sim.csv' ，'postchecker.m' 将对其进行后处理并画出频谱图。
-
-当采样信号是一个频率为 $f_0=1\mathrm{MHz}$ 的方波信号时，仿真结果是这里的 'fft_amplitude.png'。
+testbench 将给出一个仿真结果 'fftout_fpga_sim.csv' ，'postchecker.m' 将对其进行后处理并画出频谱图，即这里的 'FPGAFFT_RECT.png'。

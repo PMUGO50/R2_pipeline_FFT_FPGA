@@ -1,10 +1,18 @@
 function postchecker()
     N = 512;
     fs = 40;
+    parafl = fopen("fftpara.v", 'r');
+    para = textscan(parafl, '%s %s %s');
+    para = para{1,3};
+    scale = 1;
+    for i=5:length(para)
+        scale = scale*2^str2double(para{i});
+    end
+
     fft_fpga_sim = readmatrix("fftout_fpga_sim.csv");
     fft_fpga_sim(:,1) = fft_fpga_sim(:,1)./(2^22)./N.*fs; %%counter: {1'b0, cnt, 22'd0}
-    fft_fpga_sim(:,2) = fft_fpga_sim(:,2)./(2^16)./N; %%realpart: {re, 16'd0}
-    fft_fpga_sim(:,3) = fft_fpga_sim(:,3)./(2^16)./N; %%imagpart: {im, 16'd0}
+    fft_fpga_sim(:,2) = fft_fpga_sim(:,2)./(2^16).*scale./N; %%realpart: {re, 16'd0}
+    fft_fpga_sim(:,3) = fft_fpga_sim(:,3)./(2^16).*scale./N; %%imagpart: {im, 16'd0}
     fft_fpga_sim(:,4) = fft_fpga_sim(:,4)./(2^30); %%valid: {1'b0, en, 30'd0}
     fft_ploting(fft_fpga_sim, 1);
 end

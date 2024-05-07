@@ -4,7 +4,16 @@ module corefft
 #(
 	parameter width=16,
 	parameter NALL=9, //2^9=512
-	parameter fdiv=24'd400000
+	parameter fdiv=24'd400000,
+	parameter scale0=0,
+	parameter scale1=1,
+	parameter scale2=1,
+	parameter scale3=1,
+	parameter scale4=1,
+	parameter scale5=1,
+	parameter scale6=1,
+	parameter scale7=1,
+	parameter scale8=0
 )
 (
 	input clk, //40MHz
@@ -54,6 +63,7 @@ module corefft
 	defparam mod0.width = width;
 	defparam mod0.N = NALL; //point=512
 	defparam mod0.M = NALL; //resolution=512
+	defparam mod0.scale = scale0;
 	
 	fftstg mod1(
 		.clk(clk),
@@ -70,6 +80,7 @@ module corefft
 	defparam mod1.width = width;
 	defparam mod1.N = NALL; //point=512
 	defparam mod1.M = (NALL-1); //resolution=256
+	defparam mod1.scale = scale1;
 	
 	fftstg mod2(
 		.clk(clk),
@@ -86,6 +97,7 @@ module corefft
 	defparam mod2.width = width;
 	defparam mod2.N = NALL; //point=512
 	defparam mod2.M = (NALL-2); //resolution=128
+	defparam mod2.scale = scale2;
 	
 	fftstg mod3(
 		.clk(clk),
@@ -102,6 +114,7 @@ module corefft
 	defparam mod3.width = width;
 	defparam mod3.N = NALL; //point=512
 	defparam mod3.M = (NALL-3); //resolution=64
+	defparam mod3.scale = scale3;
 	
 	fftstg mod4(
 		.clk(clk),
@@ -118,6 +131,7 @@ module corefft
 	defparam mod4.width = width;
 	defparam mod4.N = NALL; //point=512
 	defparam mod4.M = (NALL-4); //resolution=32
+	defparam mod4.scale = scale4;
 	
 	fftstg mod5(
 		.clk(clk),
@@ -134,6 +148,7 @@ module corefft
 	defparam mod5.width = width;
 	defparam mod5.N = NALL; //point=512
 	defparam mod5.M = (NALL-5); //resolution=16
+	defparam mod5.scale = scale5;
 	
 	fftstg mod6(
 		.clk(clk),
@@ -150,6 +165,7 @@ module corefft
 	defparam mod6.width = width;
 	defparam mod6.N = NALL; //point=512
 	defparam mod6.M = (NALL-6); //resolution=8
+	defparam mod6.scale = scale6;
 	
 	fftstg mod7(
 		.clk(clk),
@@ -166,6 +182,7 @@ module corefft
 	defparam mod7.width = width;
 	defparam mod7.N = NALL; //point=512
 	defparam mod7.M = (NALL-7); //resolution=4
+	defparam mod7.scale = scale7;
 	
 	fftstg_fn mod8(
 		.clk(clk),
@@ -182,6 +199,7 @@ module corefft
 	defparam mod8.width = width;
 	defparam mod8.N = NALL; //point=512
 	defparam mod8.M = (NALL-8); //resolution=2
+	defparam mod8.scale = scale8;
 	
 //////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////output rearranger//////////////////////////////////

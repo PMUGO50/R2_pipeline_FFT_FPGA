@@ -1,30 +1,26 @@
 `timescale 1ns / 1ps
-module topmodule
-#(
-	parameter width=16,
-	parameter NALL=9,
-	parameter fdiv=24'd400000
-)
-(
+`include "fftpara.v"
+
+module topmodule(
 	input clk, //40MHz
 	input areset,
 	input din_en,
-	input signed [width-1:0] din_ad,
+	input signed [`WIDTH-1:0] din_ad,
 	output dout_en,
-	output [NALL-1:0] dout_cnt,
-	output signed [width-1:0] dout_re,
-	output signed [width-1:0] dout_im
+	output [`NALL-1:0] dout_cnt,
+	output signed [`WIDTH-1:0] dout_re,
+	output signed [`WIDTH-1:0] dout_im
 );
 
-	reg signed [width-1:0] dcore;
+	reg signed [`WIDTH-1:0] dcore;
 	reg en_core;
-	reg [NALL-1:0] cnt_core;
+	reg [`NALL-1:0] cnt_core;
 	
 	always @(posedge clk, negedge areset) begin
 		if(!areset) begin
-			dcore <= {width{1'b0}};
+			dcore <= {`WIDTH{1'b0}};
 			en_core <= 1'b0;
-			cnt_core <= {NALL{1'b1}};
+			cnt_core <= {`NALL{1'b1}};
 		end
 		else if (din_en) begin
 			dcore <= din_ad;
@@ -47,7 +43,16 @@ module topmodule
 		.dout_re(dout_re),
 		.dout_im(dout_im)
 	);
-	defparam u_corefft.width = width;
-	defparam u_corefft.NALL = NALL; //point=512
-	defparam u_corefft.fdiv = fdiv;
+	defparam u_corefft.width = `WIDTH;
+	defparam u_corefft.NALL = `NALL; //point=512
+	defparam u_corefft.fdiv = `FDIV;
+	defparam u_corefft.scale0 = `SCALE0;
+	defparam u_corefft.scale1 = `SCALE1;
+	defparam u_corefft.scale2 = `SCALE2;
+	defparam u_corefft.scale3 = `SCALE3;
+	defparam u_corefft.scale4 = `SCALE4;
+	defparam u_corefft.scale5 = `SCALE5;
+	defparam u_corefft.scale6 = `SCALE6;
+	defparam u_corefft.scale7 = `SCALE7;
+	defparam u_corefft.scale8 = `SCALE8;
 endmodule

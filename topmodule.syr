@@ -6,22 +6,22 @@ Top Level Output File Name         : topmodule.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 31586
+# BELS                             : 31495
 #      GND                         : 83
 #      INV                         : 43
-#      LUT1                        : 26
+#      LUT1                        : 11
 #      LUT2                        : 5444
 #      LUT3                        : 1563
 #      LUT4                        : 3425
 #      LUT5                        : 56
-#      LUT6                        : 143
+#      LUT6                        : 125
 #      MULT_AND                    : 3456
-#      MUXCY                       : 8577
+#      MUXCY                       : 8562
 #      VCC                         : 67
-#      XORCY                       : 8703
-# FlipFlops/Latches                : 1332
+#      XORCY                       : 8660
+# FlipFlops/Latches                : 1317
 #      FD                          : 64
-#      FDC                         : 551
+#      FDC                         : 536
 #      FDCE                        : 564
 #      FDP                         : 128
 #      FDPE                        : 25
@@ -40,15 +40,15 @@ Selected Device : 6slx100csg484-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:            1332  out of  126576     1%  
- Number of Slice LUTs:                10700  out of  63288    16%  
-    Number used as Logic:             10700  out of  63288    16%  
+ Number of Slice Registers:            1317  out of  126576     1%  
+ Number of Slice LUTs:                10667  out of  63288    16%  
+    Number used as Logic:             10667  out of  63288    16%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:  11224
-   Number with an unused Flip Flop:    9892  out of  11224    88%  
-   Number with an unused LUT:           524  out of  11224     4%  
-   Number of fully used LUT-FF pairs:   808  out of  11224     7%  
+ Number of LUT Flip Flop pairs used:  11191
+   Number with an unused Flip Flop:    9874  out of  11191    88%  
+   Number with an unused LUT:           524  out of  11191     4%  
+   Number of fully used LUT-FF pairs:   793  out of  11191     7%  
    Number of unique control sets:       141
 
 IO Utilization: 
@@ -67,3 +67,4 @@ Partition Resource Summary:
   No Partitions were found in this design.
 
 ---------------------------
+

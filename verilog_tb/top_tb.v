@@ -3,7 +3,6 @@
 module top_tb;
 	parameter width=16;
 	parameter N=9;
-	parameter fdiv=24'd10;
 	parameter halfT_oa = 0.5; //actual clock: period=25ns, freq=40MHz
 	
 	reg clk;
@@ -18,13 +17,7 @@ module top_tb;
 	reg [N-1:0] index;
 	integer fw;
 	
-	topmodule
-	#(
-		.width(width),
-		.NALL(N),
-		.fdiv(fdiv)
-	)
-	uut (
+	topmodule uut(
 		.clk(clk),
 		.areset(areset),
 		.din_en(din_en),
@@ -35,7 +28,7 @@ module top_tb;
 		.dout_im(dout_im)
 	);
 	
-	initial #(40000*halfT_oa) $stop;
+	initial #(30000*halfT_oa) $stop;
 
 	initial begin
 		clk <= 1'b1;
@@ -48,7 +41,7 @@ module top_tb;
 		#(halfT_oa) areset <= 1'b1;
 	end
 	
-	initial $readmemh("wavesamp.txt", dtest);
+	initial $readmemh("wavesamp.csv", dtest);
 	initial begin
 		#(20*halfT_oa+1) din_en <= 1'b1; 
 		//As datasheet says, after FIFO reset, it needs a few clock period to get out of 'RESET state', so input mustn't be enabled in these periods.
