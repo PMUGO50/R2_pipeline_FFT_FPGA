@@ -16,7 +16,7 @@ Summary part of synthesis report is 'topmodule.syr'.
 
 本仓库是用 Verilog 对基2 FFT 在 FPGA 上的实现。
 
-本程序的 FFT 是 **512 点**的，分辨率为采样频率的 1/512 ，全程数据位宽是 **16 位符号数**。可以通过调整 'fftpara.v' 中的 FDIV 来调整输出频率，$f_{out} = f_{clk}/\mathrm{FDIV}$。
+本程序的 FFT 是 **512 点**的，分辨率为采样频率的 1/512 ，全程数据位宽是 **16 位符号数**。可以通过调整 'fftpara.v' 中的 FDIV 来调整输出频率，$f_{out} = f_{clk}/\mathrm{FDIV}$ 。
 
 - [x] 通过行为仿真
 
