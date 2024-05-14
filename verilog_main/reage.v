@@ -82,5 +82,5 @@ module reage
 			end
 		end
 	end
-	assign cnt_ram_out = reage_cnt;
+	assign cnt_ram_out = reage_cnt - 1'b1;
 endmodule

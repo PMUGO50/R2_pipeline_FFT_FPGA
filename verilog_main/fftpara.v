@@ -10,4 +10,4 @@
 `define SCALE5 1
 `define SCALE6 1
 `define SCALE7 1
-`define SCALE8 1
+`define SCALE8 0

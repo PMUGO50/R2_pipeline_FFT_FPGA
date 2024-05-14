@@ -34,18 +34,16 @@ Main verilog implementation code is in 'verilog_main', where 'IPdcp.md' list set
 
 Verilog 主程序代码在 'verilog_main' 中，其中 'IPdcp.md' 列出了所用到的 IP 核的配置，包括复数乘法器，FIFO ，BRAM ，BROM 。
 
-## Aided MATLAB code
-
 Some aided MATLAB code is in 'matlab_aid'. This MATLAB file is used for sampled, twiddle(rotation) factor generation.
 
 一些辅助的 MATLAB 代码在 'twiddle_gen' 中。这个 MATLAB 文件是用来生成旋转因子的。
 
-## Testbench code
+## Simulation and Test
 
-Testbench code is in 'verilog_tb', where simulation can be done with 'top_tb.v'. Here input signal for testbench is a rectangular signal with frequency $f_0=1\mathrm{MHz}$, **whose sampling frequency is $f_s=40\mathrm{MHz}$, which is also clock frequency of FPGA in testbench**.
+Testbench code is 'verilog_tb/top_tb.v'. Input signalis a sine signal with frequency $f_0=S\mathrm{MHz}$, **whose sampling frequency is $f_s=40\mathrm{MHz}$, which is also clock frequency of FPGA in testbench**. Simu result is 'behavior_sim.png'.
 
-Testbench will give a result 'fftout_fpga_sim.csv'. 'postchecker.m' will post-process the csv and plot frequency spectrum, which is 'FPGAFFT_RECT.png' here.
+Board test result is 'board_test.png'.
 
-仿真代码在 'verilog_tb' 中，可以启动 'top_tb.v' 来完成仿真。这里 testbench 的输入信号是一个频率为 $f_0=1\mathrm{MHz}$ 的方波信号，**采样该信号的频率是 $f_s=40\mathrm{MHz}$ ，也是测试的 FPGA 的时钟频率**。
+仿真代码是 'verilog_tb/top_tb.v'。输入信号是一个频率为 $f_0=5\mathrm{MHz}$ 的正弦信号，**采样该信号的频率是 $f_s=40\mathrm{MHz}$ ，也是测试的 FPGA 的时钟频率**。仿真结果是 'behavior_sim.png'。
 
-testbench 将给出一个仿真结果 'fftout_fpga_sim.csv' ，'postchecker.m' 将对其进行后处理并画出频谱图，即这里的 'FPGAFFT_RECT.png'。
+上板测试结果是 'board_test.png'。
