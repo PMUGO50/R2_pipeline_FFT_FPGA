@@ -15,7 +15,7 @@ module reage
 	input signed [width-1:0] din_ram_im,
 	
 	output reg enout,
-	output [N-1:0] cnt_ram_out,
+	output reg [N-1:0] cnt_ram_out,
 	output signed [width-1:0] dout_ram_re,
 	output signed [width-1:0] dout_ram_im
 );
@@ -82,5 +82,9 @@ module reage
 			end
 		end
 	end
-	assign cnt_ram_out = reage_cnt - 1'b1;
+	
+	always @(posedge clk, negedge areset) begin
+		if(!areset) cnt_ram_out <= {N{1'b0}};
+		else cnt_ram_out <= reage_cnt;
+	end
 endmodule
