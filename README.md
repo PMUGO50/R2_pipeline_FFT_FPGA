@@ -40,10 +40,10 @@ Some aided MATLAB code is in 'matlab_aid'. This MATLAB file is used for sampled,
 
 ## Simulation and Test
 
-Testbench code is 'verilog_tb/top_tb.v'. Input signalis a sine signal with frequency $f_0=S\mathrm{MHz}$, **whose sampling frequency is $f_s=40\mathrm{MHz}$, which is also clock frequency of FPGA in testbench**. Simu result is 'behavior_sim.png'.
+Testbench code is 'verilog_tb/top_tb.v'. Input signalis a sine signal with frequency $f_0=10\mathrm{MHz}$, **whose sampling frequency is $f_s=40\mathrm{MHz}$, which is also clock frequency of FPGA in testbench**. Simu result is 'behavior_sim.png'.
 
 Board test result is 'board_test.png'.
 
-仿真代码是 'verilog_tb/top_tb.v'。输入信号是一个频率为 $f_0=5\mathrm{MHz}$ 的正弦信号，**采样该信号的频率是 $f_s=40\mathrm{MHz}$ ，也是测试的 FPGA 的时钟频率**。仿真结果是 'behavior_sim.png'。
+仿真代码是 'verilog_tb/top_tb.v'。输入信号是一个频率为 $f_0=10\mathrm{MHz}$ 的正弦信号，**采样该信号的频率是 $f_s=40\mathrm{MHz}$ ，也是测试的 FPGA 的时钟频率**。仿真结果是 'behavior_sim.png'。
 
 上板测试结果是 'board_test.png'。
